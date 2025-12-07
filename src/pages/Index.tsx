@@ -1,4 +1,4 @@
-import { ArrowRight, Mail, ClipboardCheck, Gift, Users, Shield, Smartphone, Play, Sparkles } from "lucide-react";
+import { ArrowRight, Mail, ClipboardCheck, Gift, Users, Shield, Smartphone, Play } from "lucide-react";
 import StepCard from "@/components/StepCard";
 import TrustIndicator from "@/components/TrustIndicator";
 import TestimonialCard from "@/components/TestimonialCard";
@@ -49,17 +49,11 @@ const Index = () => {
       {/* Hero Section */}
       <section className="px-5 pt-10 pb-8">
         <div className="max-w-lg mx-auto text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-1.5 bg-secondary px-3 py-1.5 rounded-full mb-6 animate-fade-up">
-            <Sparkles className="w-3.5 h-3.5 text-[hsl(var(--tiktok-red))]" />
-            <span className="text-xs font-medium text-muted-foreground">Limited Time Offer</span>
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl font-black text-foreground leading-[1.1] mb-4 tracking-tight animate-fade-up-delay-1">
+          <h1 className="text-4xl sm:text-5xl font-black text-foreground leading-[1.1] mb-4 tracking-tight animate-fade-up">
             Unlock Your <span className="gradient-text">Rewards</span>
           </h1>
           
-          <p className="text-muted-foreground text-base leading-relaxed mb-8 max-w-sm mx-auto animate-fade-up-delay-2">
+          <p className="text-muted-foreground text-base leading-relaxed mb-8 max-w-sm mx-auto animate-fade-up-delay-1">
             Complete simple tasks and claim exclusive TikTok Shop rewards. Start now.
           </p>
 
@@ -68,7 +62,7 @@ const Index = () => {
             href={CTA_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="tiktok-button inline-flex items-center gap-2 animate-fade-up-delay-3 animate-pulse-glow"
+            className="tiktok-button inline-flex items-center gap-2 animate-fade-up-delay-2 animate-pulse-glow"
           >
             Get Started
             <ArrowRight className="w-4 h-4" />
