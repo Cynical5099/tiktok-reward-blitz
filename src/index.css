@@ -2,84 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 8%;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 8%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 8%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 160 60% 45%;
+    --primary: 348 97% 59%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 8%;
-
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
-
-    --accent: 160 60% 45%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 160 60% 45%;
-
-    --radius: 1rem;
-
-    /* Custom TikTok-inspired tokens */
-    --tiktok-green: 160 60% 45%;
-    --tiktok-green-light: 160 50% 95%;
-    --tiktok-dark: 0 0% 8%;
-    --tiktok-gray: 0 0% 55%;
-
-    /* Shadows */
-    --shadow-card: 0 4px 24px -4px hsl(0 0% 0% / 0.08);
-    --shadow-button: 0 4px 16px -2px hsl(var(--tiktok-green) / 0.4);
-    --shadow-sticky: 0 -4px 24px -4px hsl(0 0% 0% / 0.1);
-
-    /* Gradients */
-    --gradient-green: linear-gradient(135deg, hsl(160 60% 45%), hsl(170 55% 40%));
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(0 0% 99%));
-  }
-
-  .dark {
-    --background: 0 0% 8%;
-    --foreground: 0 0% 98%;
-
-    --card: 0 0% 12%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 0 0% 12%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 160 60% 50%;
-    --primary-foreground: 0 0% 8%;
-
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 100%;
 
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 65%;
 
-    --accent: 160 60% 50%;
-    --accent-foreground: 0 0% 8%;
+    --accent: 180 100% 50%;
+    --accent-foreground: 0 0% 0%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 160 60% 50%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 348 97% 59%;
+
+    --radius: 0.5rem;
+
+    /* TikTok signature colors */
+    --tiktok-red: 348 97% 59%;
+    --tiktok-cyan: 180 100% 50%;
+    --tiktok-dark: 0 0% 0%;
+    --tiktok-gray: 0 0% 45%;
+
+    /* Shadows */
+    --shadow-card: 0 0 0 1px hsl(0 0% 100% / 0.05);
+    --shadow-button: 0 0 30px hsl(var(--tiktok-red) / 0.5);
+    --shadow-sticky: 0 -1px 0 hsl(0 0% 100% / 0.1);
+    --shadow-glow: 0 0 60px hsl(var(--tiktok-red) / 0.3);
   }
 }
 
@@ -90,7 +57,7 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   }
 }
 
@@ -102,23 +69,31 @@
 
 @layer components {
   .tiktok-card {
-    @apply bg-card rounded-2xl p-6 shadow-[var(--shadow-card)] border border-border/50;
+    @apply bg-card rounded-lg p-5 border border-border;
   }
 
   .tiktok-button {
-    @apply bg-[hsl(var(--tiktok-green))] text-primary-foreground font-bold py-4 px-8 rounded-full shadow-[var(--shadow-button)] transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95;
+    @apply bg-[hsl(var(--tiktok-red))] text-primary-foreground font-semibold py-3.5 px-8 rounded-sm transition-all duration-200 hover:brightness-110 active:scale-[0.98];
   }
 
   .tiktok-button-sticky {
-    @apply bg-[hsl(var(--tiktok-green))] text-primary-foreground font-bold py-4 px-8 rounded-full shadow-[var(--shadow-button)] transition-all duration-300 hover:brightness-110 active:scale-95 w-full text-lg;
+    @apply bg-[hsl(var(--tiktok-red))] text-primary-foreground font-semibold py-3.5 px-8 rounded-sm transition-all duration-200 hover:brightness-110 active:scale-[0.98] w-full text-base;
+  }
+
+  .tiktok-button-outline {
+    @apply border-2 border-[hsl(var(--tiktok-red))] text-[hsl(var(--tiktok-red))] font-semibold py-3.5 px-8 rounded-sm transition-all duration-200 hover:bg-[hsl(var(--tiktok-red))] hover:text-primary-foreground;
   }
 
   .step-number {
-    @apply w-10 h-10 rounded-full bg-[hsl(var(--tiktok-green))] text-primary-foreground font-bold flex items-center justify-center text-lg;
+    @apply w-8 h-8 rounded-full bg-[hsl(var(--tiktok-red))] text-primary-foreground font-bold flex items-center justify-center text-sm;
   }
 
   .trust-icon {
-    @apply w-12 h-12 rounded-full bg-[hsl(var(--tiktok-green-light))] flex items-center justify-center;
+    @apply w-10 h-10 rounded-full bg-secondary flex items-center justify-center;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[hsl(var(--tiktok-red))] to-[hsl(var(--tiktok-cyan))];
   }
 }
 
@@ -128,32 +103,23 @@
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
   }
 }
 
-@keyframes pulse-soft {
+@keyframes pulse-glow {
   0%, 100% {
-    opacity: 1;
+    box-shadow: 0 0 30px hsl(348 97% 59% / 0.4);
   }
   50% {
-    opacity: 0.8;
-  }
-}
-
-@keyframes rotate-slow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+    box-shadow: 0 0 50px hsl(348 97% 59% / 0.6);
   }
 }
 
 @keyframes fade-up {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
@@ -161,33 +127,59 @@
   }
 }
 
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .animate-float {
   animation: float 3s ease-in-out infinite;
 }
 
-.animate-pulse-soft {
-  animation: pulse-soft 2s ease-in-out infinite;
-}
-
-.animate-rotate-slow {
-  animation: rotate-slow 20s linear infinite;
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
 }
 
 .animate-fade-up {
-  animation: fade-up 0.6s ease-out forwards;
+  animation: fade-up 0.5s ease-out forwards;
 }
 
 .animate-fade-up-delay-1 {
-  animation: fade-up 0.6s ease-out 0.1s forwards;
+  animation: fade-up 0.5s ease-out 0.1s forwards;
   opacity: 0;
 }
 
 .animate-fade-up-delay-2 {
-  animation: fade-up 0.6s ease-out 0.2s forwards;
+  animation: fade-up 0.5s ease-out 0.2s forwards;
   opacity: 0;
 }
 
 .animate-fade-up-delay-3 {
-  animation: fade-up 0.6s ease-out 0.3s forwards;
+  animation: fade-up 0.5s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+.animate-slide-in {
+  animation: slide-in 0.4s ease-out forwards;
+}
+
+.animate-slide-in-delay-1 {
+  animation: slide-in 0.4s ease-out 0.1s forwards;
+  opacity: 0;
+}
+
+.animate-slide-in-delay-2 {
+  animation: slide-in 0.4s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-slide-in-delay-3 {
+  animation: slide-in 0.4s ease-out 0.3s forwards;
   opacity: 0;
 }
